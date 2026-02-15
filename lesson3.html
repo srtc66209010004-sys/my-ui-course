@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 7-9 (ระบบปลดล็อค)</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <style>
+        /* สไตล์เพิ่มเติมสำหรับระบบล็อค */
+        .locked-quiz-msg {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #ef9a9a;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .quiz-form-container {
+            display: none; /* ซ่อนข้อสอบไว้ก่อน */
+        }
+
+        /* อนิเมชั่นตอนปลดล็อคบทเรียนใหม่ */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <div class="nav-con">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.srtc.ac.th/admission/images/logosrtc.png" alt="Home" class="logo-img">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">หน้าหลัก</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="user-registration" style="padding: 20px 0;">
+    <div class="container">
+        <div style="background: #eefbff; padding: 20px; border-radius: 15px; border: 2px solid #40bcf5; text-align: center;">
+            <h3 style="color: #333; margin-bottom: 10px;">👤 ข้อมูลผู้เข้าเรียน</h3>
+            <input type="text" id="user-name" placeholder="กรุณากรอกชื่อ-นามสกุล ของคุณ"
+                   style="width: 80%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+        </div>
+    </div>
+</section>
+
+<section class="lesson-page">
+    <div class="container">
+        
+        <div class="lesson-box" id="lesson-box-7">
+            <h2>บทที่ 7: ชื่อบทเรียนที่ 7</h2>
+            <div class="lesson-video-con">
+                <video id="video-7" controls playsinline preload="metadata">
+                    <source src="videos/lesson7.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เนื้อหาบทที่ 7...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 7 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-7" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+
+                <div id="quiz-container-7" class="quiz-form-container">
+                    <form id="quiz-form-7">
+                        <div class="quiz-item">
+                            <p>1. เครื่องมือใดใน Roblox Studio ใช้สำหรับสร้างท่าทางตัวละคร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_1" value="1"> ก. Animation Editor</label>
+                                <label><input type="radio" name="q7_1" value="0"> ข. Character Creator</label>
+                                <label><input type="radio" name="q7_1" value="0"> ค. Motion Capture</label>
+                                <label><input type="radio" name="q7_1" value="0"> ง. Pose Tool</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. Service ใดที่ใช้สำหรับตรวจสอบการกดปุ่มบนคีย์บอร์ดหรือเมาส์ของผู้เล่น?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_2" value="0"> ก. KeyboardService</label>
+                                <label><input type="radio" name="q7_2" value="1"> ข. UserInputService</label>
+                                <label><input type="radio" name="q7_2" value="0"> ค. InputSystem</label>
+                                <label><input type="radio" name="q7_2" value="0"> ง. PlayerControl</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. หากต้องการให้อนิเมชั่นเล่น "วนซ้ำ" ไปเรื่อยๆ (เช่น ท่าเดิน) ต้องติ๊กเลือกอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_3" value="0"> ก. Repeat</label>
+                                <label><input type="radio" name="q7_3" value="0"> ข. AlwaysOn</label>
+                                <label><input type="radio" name="q7_3" value="1"> ค. Looped</label>
+                                <label><input type="radio" name="q7_3" value="0"> ง. Cycle</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. AnimationPriority ระดับใดที่มีความสำคัญ "สูงสุด" (จะแสดงทับท่าอื่นๆ)?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_4" value="0"> ก. Core</label>
+                                <label><input type="radio" name="q7_4" value="0"> ข. Idle</label>
+                                <label><input type="radio" name="q7_4" value="0"> ค. Movement</label>
+                                <label><input type="radio" name="q7_4" value="1"> ง. Action</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. คำสั่ง `Enum.KeyCode.Space` หมายถึงปุ่มใดบนคีย์บอร์ด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_5" value="1"> ก. Spacebar (เว้นวรรค)</label>
+                                <label><input type="radio" name="q7_5" value="0"> ข. ปุ่ม S</label>
+                                <label><input type="radio" name="q7_5" value="0"> ค. ปุ่ม Enter</label>
+                                <label><input type="radio" name="q7_5" value="0"> ง. ปุ่ม Esc</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. วัตถุใดในตัวละคร (Character) ที่ทำหน้าที่โหลดและเล่นอนิเมชั่น?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_6" value="0"> ก. Head</label>
+                                <label><input type="radio" name="q7_6" value="1"> ข. Humanoid / Animator</label>
+                                <label><input type="radio" name="q7_6" value="0"> ค. RootPart</label>
+                                <label><input type="radio" name="q7_6" value="0"> ง. AnimateScript</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. จุดสีขาวๆ ใน Animation Editor ที่กำหนดตำแหน่งของท่าทาง ณ เวลานั้นๆ เรียกว่าอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_7" value="0"> ก. Pin</label>
+                                <label><input type="radio" name="q7_7" value="0"> ข. Dot</label>
+                                <label><input type="radio" name="q7_7" value="1"> ค. Keyframe</label>
+                                <label><input type="radio" name="q7_7" value="0"> ง. Marker</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. เหตุการณ์ (Event) ใดใช้ตรวจสอบเมื่อผู้เล่น "คลิกปุ่ม" บนหน้าจอ UI?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_8" value="0"> ก. MouseEnter</label>
+                                <label><input type="radio" name="q7_8" value="0"> ข. Touched</label>
+                                <label><input type="radio" name="q7_8" value="0"> ค. OnClick</label>
+                                <label><input type="radio" name="q7_8" value="1"> ง. MouseButton1Click</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. หุ่นตัวละครแบบใหม่ที่มีข้อต่อละเอียดและขยับได้สมจริงกว่า เรียกว่าอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_9" value="1"> ก. R15</label>
+                                <label><input type="radio" name="q7_9" value="0"> ข. R6</label>
+                                <label><input type="radio" name="q7_9" value="0"> ค. Rthro</label>
+                                <label><input type="radio" name="q7_9" value="0"> ง. Classic</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. หากต้องการรู้ว่าผู้เล่น "เริ่มกด" ปุ่มเมื่อไหร่ ต้องใช้ Event ใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q7_10" value="0"> ก. InputChanged</label>
+                                <label><input type="radio" name="q7_10" value="1"> ข. InputBegan</label>
+                                <label><input type="radio" name="q7_10" value="0"> ค. InputEnded</label>
+                                <label><input type="radio" name="q7_10" value="0"> ง. KeyPress</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(7)">ส่งคำตอบบทที่ 7</button>
+                    </form>
+                </div>
+                
+                <div id="result-box-7" style="display:none;" class="result-container">
+                    <h4>สรุปผลการทดสอบบทที่ 7</h4>
+                    <p id="score-display-7" class="score-text"></p>
+                    <div class="feedback-area">
+                        <p>ประเมินความพึงพอใจ:</p>
+                        <div class="rating-box">
+                            <label><input type="radio" name="rate7" value="5"> ดีมาก</label>
+                            <label><input type="radio" name="rate7" value="3"> พอใจ</label>
+                            <label><input type="radio" name="rate7" value="1"> ปรับปรุง</label>
+                        </div>
+                        <textarea id="user-feedback-7" placeholder="บอกความรู้สึกของคุณ..."></textarea>
+                        <button type="button" class="submit-quiz-btn" onclick="submitFeedback(7)">ส่งผลประเมิน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="lesson-box" id="lesson-box-8" style="display: none;">
+            <h2>บทที่ 8: ชื่อบทเรียนที่ 8</h2>
+            <div class="lesson-video-con">
+                <video id="video-8" controls playsinline preload="metadata">
+                    <source src="videos/lesson8.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เนื้อหาบทที่ 8...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 8 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-8" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+
+                <div id="quiz-container-8" class="quiz-form-container">
+                   <form id="quiz-form-8">
+                        <div class="quiz-item">
+                            <p>1. ใน Roblox ระบบ FilteringEnabled มีไว้เพื่ออะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_1" value="1"> ก. ป้องกัน Hacker ไม่ให้แก้ข้อมูล Server ได้โดยตรง</label>
+                                <label><input type="radio" name="q8_1" value="0"> ข. กรองคำหยาบในช่องแชท</label>
+                                <label><input type="radio" name="q8_1" value="0"> ค. ทำให้เกมภาพสวยขึ้น</label>
+                                <label><input type="radio" name="q8_1" value="0"> ง. ลดอาการแลคของเกม</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. วัตถุใดใช้ส่งสัญญาณ "ทางเดียว" ระหว่าง Client และ Server?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_2" value="0"> ก. BindableEvent</label>
+                                <label><input type="radio" name="q8_2" value="1"> ข. RemoteEvent</label>
+                                <label><input type="radio" name="q8_2" value="0"> ค. RemoteFunction</label>
+                                <label><input type="radio" name="q8_2" value="0"> ง. NetworkEvent</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. หาก LocalScript ต้องการสั่งให้ Server ทำงาน (เช่น ซื้อของ) ต้องใช้คำสั่งใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_3" value="0"> ก. FireClient()</label>
+                                <label><input type="radio" name="q8_3" value="0"> ข. FireAllClients()</label>
+                                <label><input type="radio" name="q8_3" value="1"> ค. FireServer()</label>
+                                <label><input type="radio" name="q8_3" value="0"> ง. RunServer()</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. RemoteEvent ควรเก็บไว้ในโฟลเดอร์ใด เพื่อให้ทั้ง Client และ Server มองเห็น?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_4" value="0"> ก. ServerStorage</label>
+                                <label><input type="radio" name="q8_4" value="0"> ข. StarterPlayer</label>
+                                <label><input type="radio" name="q8_4" value="0"> ค. Workspace</label>
+                                <label><input type="radio" name="q8_4" value="1"> ง. ReplicatedStorage</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. เมื่อ Server รับสัญญาณจาก Client ด้วย `OnServerEvent` พารามิเตอร์ตัวแรกที่ได้รับเสมอคืออะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_5" value="1"> ก. ผู้เล่น (Player) ที่เป็นคนส่งสัญญาณ</label>
+                                <label><input type="radio" name="q8_5" value="0"> ข. ข้อมูลที่ส่งมา</label>
+                                <label><input type="radio" name="q8_5" value="0"> ค. เวลาที่ส่ง</label>
+                                <label><input type="radio" name="q8_5" value="0"> ง. ชื่อของ RemoteEvent</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. หากต้องการส่งข้อมูลและ "รอรับคำตอบกลับ" (Two-way communication) ควรใช้อะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_6" value="0"> ก. RemoteEvent</label>
+                                <label><input type="radio" name="q8_6" value="1"> ข. RemoteFunction</label>
+                                <label><input type="radio" name="q8_6" value="0"> ค. BindableFunction</label>
+                                <label><input type="radio" name="q8_6" value="0"> ง. CallbackFunction</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. สิ่งที่เกิดขึ้นใน LocalScript (เช่น เปลี่ยนสี Part) คนอื่นจะเห็นหรือไม่?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_7" value="0"> ก. เห็นทุกคน</label>
+                                <label><input type="radio" name="q8_7" value="0"> ข. เห็นเฉพาะ Admin</label>
+                                <label><input type="radio" name="q8_7" value="1"> ค. ไม่เห็น (เห็นเฉพาะเครื่องตัวเอง)</label>
+                                <label><input type="radio" name="q8_7" value="0"> ง. เห็นเฉพาะเพื่อน</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. Server Script ทำงานที่ไหน?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_8" value="0"> ก. คอมพิวเตอร์ของผู้เล่นทุกคน</label>
+                                <label><input type="radio" name="q8_8" value="0"> ข. มือถือของผู้เล่น</label>
+                                <label><input type="radio" name="q8_8" value="0"> ค. ใน ReplicatedStorage</label>
+                                <label><input type="radio" name="q8_8" value="1"> ง. บนเครื่องเซิร์ฟเวอร์ของ Roblox</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. คำสั่ง `FireAllClients()` ใช้ทำอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_9" value="1"> ก. สั่งให้ผู้เล่นทุกคนในเซิร์ฟเวอร์เกิดเหตุการณ์บางอย่าง</label>
+                                <label><input type="radio" name="q8_9" value="0"> ข. เตะผู้เล่นทุกคนออกจากเกม</label>
+                                <label><input type="radio" name="q8_9" value="0"> ค. ลบข้อมูลผู้เล่นทุกคน</label>
+                                <label><input type="radio" name="q8_9" value="0"> ง. ปิดเซิร์ฟเวอร์</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. กฎเหล็กของความปลอดภัยในการเขียนเกมออนไลน์คืออะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q8_10" value="0"> ก. เชื่อใจข้อมูลจาก Client เสมอ</label>
+                                <label><input type="radio" name="q8_10" value="1"> ข. อย่าเชื่อใจข้อมูลที่ส่งมาจาก Client (Never Trust Client)</label>
+                                <label><input type="radio" name="q8_10" value="0"> ค. ให้ Client เป็นคนคำนวณเงิน</label>
+                                <label><input type="radio" name="q8_10" value="0"> ง. ปิดระบบ FilteringEnabled</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(8)">ส่งคำตอบบทที่ 8</button>
+                    </form>
+                </div>
+                
+                <div id="result-box-8" style="display:none;" class="result-container">
+                    <h4>สรุปผลการทดสอบบทที่ 8</h4>
+                    <p id="score-display-8" class="score-text"></p>
+                    <div class="rating-box">
+                        <label><input type="radio" name="rate8" value="5"> ดีมาก</label>
+                        <label><input type="radio" name="rate8" value="3"> พอใจ</label>
+                        <label><input type="radio" name="rate8" value="1"> ปรับปรุง</label>
+                    </div>
+                    <textarea id="user-feedback-8" placeholder="บอกความรู้สึกของคุณ..."></textarea>
+                    <button type="button" class="submit-quiz-btn" onclick="submitFeedback(8)">ส่งผลประเมิน</button>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="lesson-box" id="lesson-box-9" style="display: none;">
+            <h2>บทที่ 9: ชื่อบทเรียนที่ 9</h2>
+            <div class="lesson-video-con">
+                <video id="video-9" controls playsinline preload="metadata">
+                    <source src="videos/lesson9.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เนื้อหาบทที่ 9...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 9 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-9" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+                
+                <div id="quiz-container-9" class="quiz-form-container">
+                    <form id="quiz-form-9">
+                        <div class="quiz-item">
+                            <p>1. Service ใดใช้สำหรับทำให้วัตถุเคลื่อนที่หรือเปลี่ยนสีอย่าง "นุ่มนวล" (Smooth)?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_1" value="1"> ก. TweenService</label>
+                                <label><input type="radio" name="q9_1" value="0"> ข. SmoothService</label>
+                                <label><input type="radio" name="q9_1" value="0"> ค. AnimationService</label>
+                                <label><input type="radio" name="q9_1" value="0"> ง. MoveService</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. EasingStyle ใน TweenInfo กำหนดอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_2" value="0"> ก. ความเร็วรวม</label>
+                                <label><input type="radio" name="q9_2" value="1"> ข. รูปแบบการเคลื่อนที่ (เช่น เด้งดึ๋ง, ค่อยๆ เร็วขึ้น)</label>
+                                <label><input type="radio" name="q9_2" value="0"> ค. สีของวัตถุ</label>
+                                <label><input type="radio" name="q9_2" value="0"> ง. เวลาที่ใช้</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. สินค้าประเภทใดในเกมที่ซื้อแล้ว "ใช้ได้ถาวร" (เช่น บินได้, ป้ายชื่อทอง)?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_3" value="0"> ก. Developer Product</label>
+                                <label><input type="radio" name="q9_3" value="0"> ข. Subscription</label>
+                                <label><input type="radio" name="q9_3" value="1"> ค. Game Pass</label>
+                                <label><input type="radio" name="q9_3" value="0"> ง. Premium</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. สินค้าประเภทใดที่ "ซื้อซ้ำได้เรื่อยๆ" (เช่น เหรียญในเกม, ยาเติมเลือด)?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_4" value="0"> ก. Game Pass</label>
+                                <label><input type="radio" name="q9_4" value="0"> ข. Asset</label>
+                                <label><input type="radio" name="q9_4" value="0"> ค. Plugin</label>
+                                <label><input type="radio" name="q9_4" value="1"> ง. Developer Product</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. Service ใดใช้สำหรับจัดการการซื้อขายสินค้าภายในเกม?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_5" value="1"> ก. MarketplaceService</label>
+                                <label><input type="radio" name="q9_5" value="0"> ข. ShopService</label>
+                                <label><input type="radio" name="q9_5" value="0"> ค. PurchaseService</label>
+                                <label><input type="radio" name="q9_5" value="0"> ง. MoneyService</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. หากต้องการให้ผู้เล่นได้รับ "เหรียญตรา" เมื่อทำภารกิจสำเร็จ ต้องใช้ Service ใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_6" value="0"> ก. AwardService</label>
+                                <label><input type="radio" name="q9_6" value="1"> ข. BadgeService</label>
+                                <label><input type="radio" name="q9_6" value="0"> ค. AchievementService</label>
+                                <label><input type="radio" name="q9_6" value="0"> ง. MedalService</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. การทำ UI ให้รองรับทั้งหน้าจอคอมและมือถือ ควรใช้หน่วยวัดแบบใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_7" value="0"> ก. Offset (พิกเซล)</label>
+                                <label><input type="radio" name="q9_7" value="0"> ข. Inches (นิ้ว)</label>
+                                <label><input type="radio" name="q9_7" value="1"> ค. Scale (เปอร์เซ็นต์)</label>
+                                <label><input type="radio" name="q9_7" value="0"> ง. Centimeters</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. Plugin ใดที่ช่วยตรวจสอบว่าสคริปต์ส่วนไหนทำให้เกมช้า (Lag)?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_8" value="0"> ก. Toolbox</label>
+                                <label><input type="radio" name="q9_8" value="0"> ข. Explorer</label>
+                                <label><input type="radio" name="q9_8" value="0"> ค. Command Bar</label>
+                                <label><input type="radio" name="q9_8" value="1"> ง. MicroProfiler / Script Performance</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. หากต้องการเปลี่ยนไอคอนของเกม (Icon) ต้องไปตั้งค่าที่ไหน?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_9" value="1"> ก. Game Settings</label>
+                                <label><input type="radio" name="q9_9" value="0"> ข. Studio Settings</label>
+                                <label><input type="radio" name="q9_9" value="0"> ค. Avatar Settings</label>
+                                <label><input type="radio" name="q9_9" value="0"> ง. Player Settings</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. การใช้ `wait()` เฉยๆ อาจไม่แม่นยำ ควรใช้อะไรแทนเพื่อให้โค้ดทำงานลื่นไหล?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q9_10" value="0"> ก. sleep()</label>
+                                <label><input type="radio" name="q9_10" value="1"> ข. task.wait()</label>
+                                <label><input type="radio" name="q9_10" value="0"> ค. stop()</label>
+                                <label><input type="radio" name="q9_10" value="0"> ง. pause()</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(9)">ส่งคำตอบบทที่ 9</button>
+                    </form>
+                </div>
+                
+               <div id="result-box-9" style="display:none;" class="result-container">
+    <h4>🏆 ยินดีด้วย! คุณเรียนจบคอร์สแล้ว</h4>
+    <p id="score-display-9" class="score-text"></p>
+    
+    <div class="feedback-area">
+        <h5>ประเมินความพึงพอใจ</h5>
+        <div class="rating-box">
+            <label><input type="radio" name="rate9" value="5"> ดีมาก</label>
+            <label><input type="radio" name="rate9" value="3"> พอใจ</label>
+            <label><input type="radio" name="rate9" value="1"> ปรับปรุง</label>
+        </div>
+        <textarea id="user-feedback-9" placeholder="ข้อเสนอแนะ..." style="width:100%; height:60px;"></textarea>
+        <button type="button" class="submit-quiz-btn" onclick="submitFeedback(9)">ส่งแบบประเมิน</button>
+    </div>
+
+    <div id="next-level-area-3" style="display:none; margin-top: 20px;">
+        <a href="index.html" class="submit-quiz-btn" style="background-color: #6c757d; text-decoration: none;">
+            กลับหน้าหลัก
+        </a>
+    </div>
+</div>
+        </div>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

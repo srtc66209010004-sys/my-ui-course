@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บทเรียนที่ 1-3 (พื้นฐานและการใช้งาน)</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <style>
+        /* สไตล์เพิ่มเติมสำหรับระบบล็อค (คัดลอกมาจาก lesson3.html) */
+        .locked-quiz-msg {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #ef9a9a;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .quiz-form-container {
+            display: none; /* ซ่อนข้อสอบไว้รอปลดล็อค */
+        }
+
+        /* อนิเมชั่นตอนปลดล็อคบทเรียนใหม่ */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <div class="nav-con">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.srtc.ac.th/admission/images/logosrtc.png" alt="Home" class="logo-img">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">หน้าหลัก</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="user-registration" style="padding: 20px 0;">
+    <div class="container">
+        <div style="background: #eefbff; padding: 20px; border-radius: 15px; border: 2px solid #40bcf5; text-align: center;">
+            <h3 style="color: #333; margin-bottom: 10px;">👤 ข้อมูลผู้เข้าเรียน</h3>
+            <input type="text" id="user-name" placeholder="กรุณากรอกชื่อ-นามสกุล ของคุณ"
+                   style="width: 80%; max-width: 400px; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
+        </div>
+    </div>
+</section>
+
+<section class="lesson-page">
+    <div class="container">
+        
+        <div class="lesson-box" id="lesson-box-1">
+            <h2>บทที่ 1: การติดตั้งและการใช้งานเบื้องต้น</h2>
+            <div class="lesson-video-con">
+                <video id="video-1" controls playsinline preload="metadata">
+                    <source src="videos/lesson1.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เรียนรู้วิธีการติดตั้งโปรแกรม และทำความรู้จักกับหน้าต่าง UI ต่างๆ ของเครื่องมือสร้างเกม...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 1 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-1" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+
+                <div id="quiz-container-1" class="quiz-form-container">
+                    <form id="quiz-form-1">
+                        <div class="quiz-item">
+                            <p>1. โปรแกรมหลักที่ใช้ในการสร้างเกมบน Roblox มีชื่อว่าอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_1" value="1"> ก. Roblox Studio</label>
+                                <label><input type="radio" name="q1_1" value="0"> ข. Roblox Player</label>
+                                <label><input type="radio" name="q1_1" value="0"> ค. Roblox Editor</label>
+                                <label><input type="radio" name="q1_1" value="0"> ง. Roblox Engine</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. หน้าต่าง Explorer มีหน้าที่สำคัญอย่างไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_2" value="0"> ก. ใช้สำหรับเลือกสีวัตถุ</label>
+                                <label><input type="radio" name="q1_2" value="1"> ข. แสดงรายการวัตถุทั้งหมดที่อยู่ในเกม</label>
+                                <label><input type="radio" name="q1_2" value="0"> ค. ใช้สำหรับเขียนโค้ด</label>
+                                <label><input type="radio" name="q1_2" value="0"> ง. ใช้สำหรับซื้อโมเดลสำเร็จรูป</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. หากต้องการปรับขนาดของวัตถุ (Part) ต้องใช้เครื่องมือใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_3" value="0"> ก. Select</label>
+                                <label><input type="radio" name="q1_3" value="0"> ข. Move</label>
+                                <label><input type="radio" name="q1_3" value="1"> ค. Scale</label>
+                                <label><input type="radio" name="q1_3" value="0"> ง. Rotate</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. หน้าต่าง Properties มีไว้สำหรับทำอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_4" value="1"> ก. ปรับแต่งคุณสมบัติของวัตถุ เช่น สี, ความโปร่งใส</label>
+                                <label><input type="radio" name="q1_4" value="0"> ข. ลบวัตถุออกจากเกม</label>
+                                <label><input type="radio" name="q1_4" value="0"> ค. ดูรายชื่อผู้เล่นในเซิร์ฟเวอร์</label>
+                                <label><input type="radio" name="q1_4" value="0"> ง. บันทึกเกมลงคอมพิวเตอร์</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. "Anchor" ใน Roblox Studio มีหน้าที่อะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_5" value="0"> ก. เปลี่ยนรูปร่างวัตถุ</label>
+                                <label><input type="radio" name="q1_5" value="1"> ข. ล็อควัตถุให้อยู่กับที่ ไม่ให้ตกลงมาตามแรงโน้มถ่วง</label>
+                                <label><input type="radio" name="q1_5" value="0"> ค. ทำให้วัตถุสะท้อนแสง</label>
+                                <label><input type="radio" name="q1_5" value="0"> ง. เชื่อมต่อวัตถุสองชิ้นเข้าด้วยกัน</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. ปุ่ม "Play" (F5) มีไว้เพื่อวัตถุประสงค์ใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_6" value="1"> ก. ทดสอบเล่นเกมในโหมด Simulator</label>
+                                <label><input type="radio" name="q1_6" value="0"> ข. ส่งเกมขึ้นเว็บไซต์ Roblox</label>
+                                <label><input type="radio" name="q1_6" value="0"> ค. เปิดโปรแกรม Roblox Studio</label>
+                                <label><input type="radio" name="q1_6" value="0"> ง. การลบข้อมูลที่ไม่จำเป็น</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. หากต้องการหาโมเดลสำเร็จรูป เช่น ต้นไม้ หรือ รถ มาใส่ในเกม ต้องเปิดหน้าต่างใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_7" value="0"> ก. Output</label>
+                                <label><input type="radio" name="q1_7" value="1"> ข. Toolbox</label>
+                                <label><input type="radio" name="q1_7" value="0"> ค. Asset Manager</label>
+                                <label><input type="radio" name="q1_7" value="0"> ง. Command Bar</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. ภาษาที่ใช้ในการเขียน Script ใน Roblox คือภาษาอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_8" value="0"> ก. Python</label>
+                                <label><input type="radio" name="q1_8" value="0"> ข. C++</label>
+                                <label><input type="radio" name="q1_8" value="1"> ค. Luau (Lua)</label>
+                                <label><input type="radio" name="q1_8" value="0"> ง. JavaScript</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. ส่วนประกอบใดใน Explorer ที่ใช้เก็บส่วนต่างๆ ที่จะมองเห็นในเกม?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_9" value="1"> ก. Workspace</label>
+                                <label><input type="radio" name="q1_9" value="0"> ข. ReplicatedStorage</label>
+                                <label><input type="radio" name="q1_9" value="0"> ค. StarterGui</label>
+                                <label><input type="radio" name="q1_9" value="0"> ง. Lighting</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. การหมุนวัตถุในโปรแกรม ต้องเลือกใช้เครื่องมือใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q1_10" value="0"> ก. Move</label>
+                                <label><input type="radio" name="q1_10" value="1"> ข. Rotate</label>
+                                <label><input type="radio" name="q1_10" value="0"> ค. Transform</label>
+                                <label><input type="radio" name="q1_10" value="0"> ง. Pivot</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(1)">ส่งคำตอบบทที่ 1</button>
+                    </form>
+                </div>
+                
+                <div id="result-box-1" style="display:none;" class="result-container">
+                    <h4>สรุปผลการทดสอบบทที่ 1</h4>
+                    <p id="score-display-1" class="score-text"></p>
+                    <div class="feedback-area">
+                        <p>ประเมินความพึงพอใจ:</p>
+                        <div class="rating-box">
+                            <label><input type="radio" name="rate1" value="5"> ดีมาก</label>
+                            <label><input type="radio" name="rate1" value="3"> พอใจ</label>
+                            <label><input type="radio" name="rate1" value="1"> ปรับปรุง</label>
+                        </div>
+                        <textarea id="user-feedback-1" placeholder="บอกความรู้สึกของคุณ..."></textarea>
+                        <button type="button" class="submit-quiz-btn" onclick="submitFeedback(1)">ส่งผลประเมิน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="lesson-box" id="lesson-box-2" style="display: none;">
+            <h2>บทที่ 2: การจัดการวัตถุและคุณสมบัติ (Parts & Properties)</h2>
+            <div class="lesson-video-con">
+                <video id="video-2" controls playsinline preload="metadata">
+                    <source src="videos/lesson2.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เจาะลึกการปรับแต่งวัตถุ การใช้ Material, Color และการตั้งค่าคุณสมบัติต่างๆ เพื่อสร้างฉากในเกม...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 2 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-2" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+
+                <div id="quiz-container-2" class="quiz-form-container">
+                    <form id="quiz-form-2">
+                        <div class="quiz-item">
+                            <p>1. หากต้องการเปลี่ยน "วัสดุ" ของวัตถุ เช่น เป็นหญ้า หรือ เหล็ก ต้องปรับที่ค่าใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_1" value="0"> ก. Color</label>
+                                <label><input type="radio" name="q2_1" value="1"> ข. Material</label>
+                                <label><input type="radio" name="q2_1" value="0"> ค. Transparency</label>
+                                <label><input type="radio" name="q2_1" value="0"> ง. Reflectance</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. ค่า Transparency 1 หมายถึงอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_2" value="0"> ก. วัตถุทึบแสงมองไม่เห็น</label>
+                                <label><input type="radio" name="q2_2" value="1"> ข. วัตถุโปร่งใสจนมองไม่เห็น (ล่องหน)</label>
+                                <label><input type="radio" name="q2_2" value="0"> ค. วัตถุมีความแข็งแรงสูง</label>
+                                <label><input type="radio" name="q2_2" value="0"> ง. วัตถุมีสีขาวสว่าง</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. คุณสมบัติ CanCollide มีหน้าที่อะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_3" value="1"> ก. กำหนดว่าวัตถุสามารถเดินทะลุได้หรือไม่</label>
+                                <label><input type="radio" name="q2_3" value="0"> ข. กำหนดว่าวัตถุจะตกลงพื้นหรือไม่</label>
+                                <label><input type="radio" name="q2_3" value="0"> ค. กำหนดการสะท้อนแสง</label>
+                                <label><input type="radio" name="q2_3" value="0"> ง. กำหนดชื่อของวัตถุ</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. หากต้องการให้วัตถุ "ทะลุผ่านได้" (เดินผ่านเหมือนอากาศ) ต้องตั้งค่า CanCollide อย่างไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_4" value="0"> ก. ติ๊กเครื่องหมายถูก (True)</label>
+                                <label><input type="radio" name="q2_4" value="1"> ข. เอาเครื่องหมายถูกออก (False)</label>
+                                <label><input type="radio" name="q2_4" value="0"> ค. ปรับค่าเป็น 1</label>
+                                <label><input type="radio" name="q2_4" value="0"> ง. ลบวัตถุทิ้ง</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. "Grouping" วัตถุ (Ctrl+G) มีประโยชน์อย่างไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_5" value="1"> ก. รวมวัตถุหลายชิ้นให้เป็นกลุ่มเดียวกันเพื่อง่ายต่อการจัดการ</label>
+                                <label><input type="radio" name="q2_5" value="0"> ข. ทำให้วัตถุระเบิด</label>
+                                <label><input type="radio" name="q2_5" value="0"> ค. เปลี่ยนสีวัตถุพร้อมกัน</label>
+                                <label><input type="radio" name="q2_5" value="0"> ง. เพิ่มความเร็วให้เซิร์ฟเวอร์</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. คุณสมบัติ "Reflectance" ใช้สำหรับทำอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_6" value="0"> ก. ทำให้วัตถุนุ่ม</label>
+                                <label><input type="radio" name="q2_6" value="1"> ข. กำหนดการสะท้อนแสงของพื้นผิววัตถุ</label>
+                                <label><input type="radio" name="q2_6" value="0"> ค. กำหนดน้ำหนักวัตถุ</label>
+                                <label><input type="radio" name="q2_6" value="0"> ง. ทำให้วัตถุเคลื่อนที่ได้</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. การเปลี่ยนชื่อวัตถุ (Rename) สามารถทำได้โดยการกดปุ่มใดบนคีย์บอร์ด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_7" value="1"> ก. F2</label>
+                                <label><input type="radio" name="q2_7" value="0"> ข. F5</label>
+                                <label><input type="radio" name="q2_7" value="0"> ค. Ctrl+C</label>
+                                <label><input type="radio" name="q2_7" value="0"> ง. Enter</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. หากต้องการก๊อปปี้วัตถุมาอีกชิ้นหนึ่งในตำแหน่งเดิมทันที ควรใช้คีย์ลัดใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_8" value="0"> ก. Ctrl+X</label>
+                                <label><input type="radio" name="q2_8" value="1"> ข. Ctrl+D (Duplicate)</label>
+                                <label><input type="radio" name="q2_8" value="0"> ค. Ctrl+V</label>
+                                <label><input type="radio" name="q2_8" value="0"> ง. Ctrl+Z</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. วัตถุชนิดใดใน Roblox Studio ที่มีรูปทรงเป็นทรงกระบอก?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_9" value="0"> ก. Block</label>
+                                <label><input type="radio" name="q2_9" value="0"> ข. Ball</label>
+                                <label><input type="radio" name="q2_9" value="1"> ค. Cylinder</label>
+                                <label><input type="radio" name="q2_9" value="0"> ง. Wedge</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. คุณสมบัติ "Locked" ใน Properties มีไว้เพื่ออะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q2_10" value="0"> ก. ล็อคไม่ให้ผู้เล่นเข้าเกม</label>
+                                <label><input type="radio" name="q2_10" value="1"> ข. ล็อคไม่ให้เราคลิกเลือกวัตถุนั้นในหน้าจอแก้ไขได้ (ป้องกันการขยับผิด)</label>
+                                <label><input type="radio" name="q2_10" value="0"> ค. ล็อคไม่ให้ใส่สี</label>
+                                <label><input type="radio" name="q2_10" value="0"> ง. ล็อคให้วัตถุลอยได้</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(2)">ส่งคำตอบบทที่ 2</button>
+                    </form>
+                </div>
+                
+                <div id="result-box-2" style="display:none;" class="result-container">
+                    <h4>สรุปผลการทดสอบบทที่ 2</h4>
+                    <p id="score-display-2" class="score-text"></p>
+                    <div class="feedback-area">
+                        <p>ประเมินความพึงพอใจ:</p>
+                        <div class="rating-box">
+                            <label><input type="radio" name="rate2" value="5"> ดีมาก</label>
+                            <label><input type="radio" name="rate2" value="3"> พอใจ</label>
+                            <label><input type="radio" name="rate2" value="1"> ปรับปรุง</label>
+                        </div>
+                        <textarea id="user-feedback-2" placeholder="บอกความรู้สึกของคุณ..."></textarea>
+                        <button type="button" class="submit-quiz-btn" onclick="submitFeedback(2)">ส่งผลประเมิน</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="lesson-box" id="lesson-box-3" style="display: none;">
+            <h2>บทที่ 3: พื้นฐานการเขียน Script (Coding Basics)</h2>
+            <div class="lesson-video-con">
+                <video id="video-3" controls playsinline preload="metadata">
+                    <source src="videos/lesson3.mp4" type="video/mp4">
+                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                </video>
+            </div>
+            <h3>เนื้อหาโดยสรุป</h3>
+            <p>เรียนรู้พื้นฐานการเขียนสคริปต์ภาษา Luau, การใช้ตัวแปร, คำสั่งเบื้องต้น และ Events ต่างๆ...</p>
+
+            <div class="quiz-section">
+                <h3 class="quiz-title">--- แบบทดสอบบทที่ 3 (10 ข้อ) ---</h3>
+                
+                <div id="lock-msg-3" class="locked-quiz-msg">
+                    🔒 กรุณาดูวิดีโอให้จบเพื่อทำแบบทดสอบ
+                </div>
+                
+                <div id="quiz-container-3" class="quiz-form-container">
+                    <form id="quiz-form-3">
+                        <div class="quiz-item">
+                            <p>1. คำสั่งใดใช้สำหรับพิมพ์ข้อความออกทางหน้าจอ Output?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_1" value="1"> ก. print()</label>
+                                <label><input type="radio" name="q3_1" value="0"> ข. output()</label>
+                                <label><input type="radio" name="q3_1" value="0"> ค. write()</label>
+                                <label><input type="radio" name="q3_1" value="0"> ง. say()</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>2. การสร้างตัวแปรในภาษา Luau ควรขึ้นต้นด้วยคำว่าอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_2" value="0"> ก. var</label>
+                                <label><input type="radio" name="q3_2" value="1"> ข. local</label>
+                                <label><input type="radio" name="q3_2" value="0"> ค. let</label>
+                                <label><input type="radio" name="q3_2" value="0"> ง. string</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>3. เครื่องหมายใดใช้สำหรับการ "กำหนดค่า" ให้กับตัวแปร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_3" value="1"> ก. =</label>
+                                <label><input type="radio" name="q3_3" value="0"> ข. ==</label>
+                                <label><input type="radio" name="q3_3" value="0"> ค. :</label>
+                                <label><input type="radio" name="q3_3" value="0"> ง. ></label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>4. หากต้องการอ้างอิงถึง Part ที่ Script นั้นฝังอยู่ข้างใน ต้องใช้คำว่าอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_4" value="0"> ก. game.Workspace</label>
+                                <label><input type="radio" name="q3_4" value="1"> ข. script.Parent</label>
+                                <label><input type="radio" name="q3_4" value="0"> ค. this.Object</label>
+                                <label><input type="radio" name="q3_4" value="0"> ง. parent.Script</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>5. คำสั่ง task.wait(5) หมายถึงอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_5" value="0"> ก. ทำงานซ้ำ 5 ครั้ง</label>
+                                <label><input type="radio" name="q3_5" value="1"> ข. ให้สคริปต์หยุดรอ 5 วินาที</label>
+                                <label><input type="radio" name="q3_5" value="0"> ค. ลบวัตถุใน 5 วินาที</label>
+                                <label><input type="radio" name="q3_5" value="0"> ง. เพิ่มขนาดวัตถุ 5 เท่า</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>6. หากเขียนว่า script.Parent.Transparency = 0.5 ผลคืออะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_6" value="1"> ก. วัตถุจะใสขึ้นครึ่งหนึ่ง</label>
+                                <label><input type="radio" name="q3_6" value="0"> ข. วัตถุจะหายไปเลย</label>
+                                <label><input type="radio" name="q3_6" value="0"> ค. วัตถุจะใหญ่ขึ้น</label>
+                                <label><input type="radio" name="q3_6" value="0"> ง. สคริปต์จะเสีย</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>7. การเขียนคอมเมนต์ (Comment) ในโค้ดที่ไม่ต้องการให้โปรแกรมอ่าน ต้องใช้เครื่องหมายใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_7" value="0"> ก. //</label>
+                                <label><input type="radio" name="q3_7" value="0"> ข. #</label>
+                                <label><input type="radio" name="q3_7" value="1"> ค. --</label>
+                                <label><input type="radio" name="q3_7" value="0"> ง. /*</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>8. "Vector3.new" ใช้สำหรับกำหนดค่าประเภทใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_8" value="0"> ก. สี (Color)</label>
+                                <label><input type="radio" name="q3_8" value="1"> ข. ตำแหน่งหรือขนาด (3 มิติ)</label>
+                                <label><input type="radio" name="q3_8" value="0"> ค. ชื่อของวัตถุ</label>
+                                <label><input type="radio" name="q3_8" value="0"> ง. ความเร็วผู้เล่น</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>9. ถ้าต้องการให้โค้ดทำงานวนซ้ำไม่รู้จบ ต้องใช้โครงสร้างใด?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_9" value="1"> ก. while true do ... end</label>
+                                <label><input type="radio" name="q3_9" value="0"> ข. if then ... end</label>
+                                <label><input type="radio" name="q3_9" value="0"> ค. repeat 10 times</label>
+                                <label><input type="radio" name="q3_9" value="0"> ง. wait forever</label>
+                            </div>
+                        </div>
+                        <div class="quiz-item">
+                            <p>10. Event "Touched" มีไว้ใช้ทำอะไร?</p>
+                            <div class="options-group">
+                                <label><input type="radio" name="q3_10" value="0"> ก. เมื่อคลิกเมาส์</label>
+                                <label><input type="radio" name="q3_10" value="1"> ข. เมื่อมีวัตถุหรือผู้เล่นมาสัมผัส</label>
+                                <label><input type="radio" name="q3_10" value="0"> ค. เมื่อเริ่มเกม</label>
+                                <label><input type="radio" name="q3_10" value="0"> ง. เมื่อผู้เล่นกดปุ่มกระโดด</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="submit-quiz-btn" onclick="calculateScore(3)">ส่งคำตอบบทที่ 3</button>
+                    </form>
+                </div>
+                
+               <div id="result-box-3" style="display:none;" class="result-container">
+    <h4>🎉 จบบทเรียนช่วงที่ 1 (บทที่ 1-3)</h4>
+    <p id="score-display-3" class="score-text"></p>
+    
+    <div class="feedback-area">
+        <h5>ประเมินความพึงพอใจ</h5>
+        <div class="rating-box">
+            <label><input type="radio" name="rate3" value="5"> ดีมาก</label>
+            <label><input type="radio" name="rate3" value="3"> พอใจ</label>
+            <label><input type="radio" name="rate3" value="1"> ปรับปรุง</label>
+        </div>
+        <textarea id="user-feedback-3" placeholder="ข้อเสนอแนะ..." style="width:100%; height:60px;"></textarea>
+        <button type="button" class="submit-quiz-btn" onclick="submitFeedback(3)">ส่งแบบประเมิน</button>
+    </div>
+
+    <div id="next-level-area-1" style="display:none; margin-top: 20px;">
+        <a href="lesson2.html" class="submit-quiz-btn" style="background-color: #ff9800; text-decoration: none;">
+            🚀 ไปเรียนบทที่ 4-6 ต่อ
+        </a>
+    </div>
+</div>
+        </div>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

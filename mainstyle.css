@@ -1,0 +1,404 @@
+/* =========================================
+   1. Global Styles (การตั้งค่าทั่วไป)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #ffffff; /* ขาวสะอาด */
+    color: #000000; /* ตัวอักษรดำหลัก */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. Navigation (เมนูด้านบน)
+   ========================================= */
+nav {
+    background-color: #40bcf5; /* สีฟ้าสดใส */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    transition: 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 15px;
+}
+
+.menu li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.menu li a:hover, .menu li a.active {
+    background: #ffffff;
+    color: #40bcf5;
+}
+
+/* =========================================
+   3. Main Content (ส่วน Banner หน้าแรก) - แก้ไขรูปใหญ่เกิน
+   ========================================= */
+.maincontent {
+    background-color: #f0faff; /* ฟ้าอ่อนมาก */
+    padding: 60px 0;
+}
+
+.maincontent-con {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* ระยะห่างระหว่างข้อความกับรูป */
+}
+
+/* ส่วนข้อความด้านซ้าย */
+.maincontent-info {
+    flex: 1; /* ให้กินพื้นที่ 1 ส่วน (ครึ่งนึง) */
+    padding-right: 20px;
+}
+
+.maincontent-info h3 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ส่วนรูปภาพด้านขวา */
+.maincontent-img {
+    flex: 1; /* ให้กินพื้นที่ 1 ส่วนเท่ากัน (ครึ่งนึง) */
+    text-align: center; /* จัดรูปให้อยู่กึ่งกลาง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maincontent-img img {
+    max-width: 100%; /* ห้ามกว้างเกินกล่อง */
+    height: auto;    /* สูงตามสัดส่วน */
+    max-height: 450px; /* จำกัดความสูงไม่ให้ยืดเกินไป */
+    border-radius: 20px; /* มุมโค้งมน */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* เงาสวยๆ */
+    object-fit: cover;
+}
+
+/* ปุ่มต่างๆ รวมกัน */
+.maincontent-btn, .content-btn, .submit-quiz-btn {
+    display: inline-block;
+    background-color: #40bcf5;
+    color: #ffffff !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.maincontent-btn:hover, .content-btn:hover, .submit-quiz-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   4. Lesson Cards (การ์ดบทเรียนหน้าแรก)
+   ========================================= */
+.content-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.content-item {
+    background: #ffffff;
+    border: 2px solid #e1f5fe;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-item:hover {
+    border-color: #40bcf5;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* จัดการรูปภาพบทเรียนให้เท่ากัน */
+.content-item img {
+    width: 100%;
+    height: 180px; /* บังคับความสูง */
+    object-fit: cover; /* ตัดภาพส่วนเกิน */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.content-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content-item p {
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* ดันปุ่มไปด้านล่าง */
+}
+
+.consectetur-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.consectetur-title h3 {
+    font-size: 2rem;
+}
+
+/* =========================================
+   5. Lesson Page (หน้าเรียนและวิดีโอ)
+   ========================================= */
+.lesson-box {
+    padding: 40px 0;
+}
+
+.lesson-video-con {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.lesson-video-con iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================
+   6. Quiz Section (ส่วนแบบทดสอบ)
+   ========================================= */
+.quiz-section {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 50px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid #40bcf5;
+}
+
+.quiz-title {
+    text-align: center;
+    color: #40bcf5;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.quiz-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.quiz-item:last-child {
+    border-bottom: none;
+}
+
+.quiz-item p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* จัดวางตัวเลือกแบบ Grid (2 คอลัมน์) */
+.options-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.options-group label {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.options-group label:hover {
+    background: #eefbff;
+    border-color: #40bcf5;
+}
+
+.options-group input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #40bcf5;
+}
+
+/* ปุ่มส่งคำตอบ */
+.submit-quiz-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto 0;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+}
+
+/* =========================================
+   7. Result & Feedback (ส่วนแสดงผลคะแนน)
+   ========================================= */
+.result-container {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.result-container h4 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.score-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 10px 0;
+}
+
+.feedback-area textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.rating-box {
+    margin: 15px 0;
+}
+
+.rating-box label {
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+/* การตั้งค่าเพิ่มเติมสำหรับวิดีโอ MP4 */
+.lesson-video-con video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* รักษาอัตราส่วนวิดีโอ */
+    background-color: #000; /* พื้นหลังดำกันภาพเบี้ยว */
+    border-radius: 15px;
+}
+
+.lesson-video-con {
+    background: #000; /* พื้นหลังของกล่องวิดีโอ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* =========================================
+   8. Quiz Layout (จัดระเบียบตัวเลือก 2 คอลัมน์)
+   ========================================= */
+
+/* ตัวคลุมตัวเลือก (Container) */
+.options-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 ช่องเท่ากัน 50/50 */
+    gap: 15px; /* ระยะห่างระหว่างช่อง */
+    margin-top: 10px;
+}
+
+/* ตกแต่งตัวเลือกแต่ละข้อ (Label) */
+.quiz-item label {
+    display: flex;
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    background-color: #f8f9fa; /* สีพื้นหลังเทาอ่อนๆ */
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 8px; /* ทำมุมมน */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* เมื่อเอาเมาส์ชี้ที่ตัวเลือก */
+.quiz-item label:hover {
+    background-color: #e1f5fe; /* เปลี่ยนเป็นสีฟ้าอ่อน */
+    border-color: #40bcf5;
+}
+
+/* จัดระยะห่างของปุ่มวงกลม (Radio) */
+.quiz-item input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.3); /* ขยายปุ่มให้กดง่ายขึ้น */
+    accent-color: #007bff; /* สีของจุดเมื่อเลือก */
+}
+
+/* (เผื่อไว้) ถ้าหน้าจอมือถือเล็กมาก ให้กลับไปเรียง 1 แถวเหมือนเดิม */
+@media (max-width: 480px) {
+    .options-group {
+        grid-template-columns: 1fr; /* กลับเป็น 1 คอลัมน์ในมือถือ */
+    }
+}
